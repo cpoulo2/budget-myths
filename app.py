@@ -48,15 +48,43 @@ def main():
     # Add responsive CSS
     st.markdown("""
     <style>
-    .iframe-parent{
-    width: 100vw;
-    height: 50vh;
+    /* Target Streamlit's iframe containers specifically */
+    .stApp > div[data-testid="stVerticalBlock"] > div.element-container > div.stComponentContainer > iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 auto !important;
+        display: block !important;
     }
-
-    /* Expand to the entire container */
-    iframe{
-      width: 100%;
-      height: 100%;
+    
+    /* Ensure the component container takes full width */
+    .stComponentContainer {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Element container should also be full width */
+    .element-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* General iframe styling for any missed cases */
+    iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .stApp > div[data-testid="stVerticalBlock"] > div.element-container > div.stComponentContainer > iframe {
+            width: 100% !important;
+            height: 400px !important;
+        }
     }
     </style>
     """, unsafe_allow_html=True)
@@ -139,8 +167,9 @@ Raising the question of what we have opens the door to deeper questions of socia
     
     # Render first chart
     html_content1 = chart1._repr_html_()
-    # Use responsive width that adapts to screen size
-    st.components.v1.html(html_content1, height=500, scrolling=False)
+    # Use a container to ensure proper centering on Streamlit Cloud
+    with st.container():
+        st.components.v1.html(html_content1, height=500, scrolling=False)
 
     # Add restart button at the end
     col1, col2, col3 = st.columns([1, 1, 1])
@@ -195,7 +224,8 @@ Raising the question of what we have opens the door to deeper questions of socia
 
     # Render second chart
     html_content2 = chart2._repr_html_()
-    st.components.v1.html(html_content2, height=500, scrolling=False)
+    with st.container():
+        st.components.v1.html(html_content2, height=500, scrolling=False)
     
         # Add restart button at the end
     col1, col2, col3 = st.columns([1, 1, 1])
