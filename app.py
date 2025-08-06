@@ -140,7 +140,7 @@ Raising the question of what we have opens the door to deeper questions of socia
     # Render first chart
     html_content1 = chart1._repr_html_()
     # Use responsive width that adapts to screen size
-    st.components.v1.html(html_content1, height=500, scrolling=True)
+    st.components.v1.html(html_content1, height=500, scrolling=False)
 
     # Add restart button at the end
     col1, col2, col3 = st.columns([1, 1, 1])
