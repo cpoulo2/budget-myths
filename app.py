@@ -45,6 +45,22 @@ def main():
     
     st.set_page_config(page_title="≠ growth", layout="centered")
 
+    # Add CSS to make charts truly responsive
+    st.markdown("""
+    <style>
+    /* Make iframe container responsive */
+    .stElementContainer {
+        width: 100% !important;
+    }
+    
+    /* Target the iframe directly */
+    iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
     st.title("Illinois' economic capacity and who captures it?")
     st.markdown("""
 A scarcity myth limits how the public imagines government budgets and how state and local leaders address deficits. This myth—the taken-for-granted belief that we simply don’t have enough to fund public jobs, goods, and services—obscures the true shape of our economy. It operates by omitting the full picture of what our society actually produces and who owns it.
@@ -123,10 +139,15 @@ Raising the question of what we have opens the door to deeper questions of socia
     
     # Render first chart
     html_content1 = chart1._repr_html_()
+    # Inject responsive CSS directly into the chart HTML
+    responsive_html1 = html_content1.replace(
+        '<div id=',
+        '<style>div[id*="chart"] { width: 100% !important; height: 400px !important; }</style><div id='
+    )
     # Use column layout to control container width explicitly
     col1, col2, col3 = st.columns([0.1, 0.8, 0.1])
     with col2:
-        st.components.v1.html(html_content1, height=500,width=500, scrolling=False)
+        st.components.v1.html(responsive_html1, height=500, scrolling=False)
 
     # Add restart button at the end
     col1, col2, col3 = st.columns([1, 1, 1])
@@ -181,10 +202,15 @@ Raising the question of what we have opens the door to deeper questions of socia
 
     # Render second chart
     html_content2 = chart2._repr_html_()
+    # Inject responsive CSS directly into the chart HTML
+    responsive_html2 = html_content2.replace(
+        '<div id=',
+        '<style>div[id*="chart"] { width: 100% !important; height: 400px !important; }</style><div id='
+    )
     # Use column layout to control container width explicitly
     col1, col2, col3 = st.columns([0.1, 0.8, 0.1])
     with col2:
-        st.components.v1.html(html_content2, height=500, scrolling=False)
+        st.components.v1.html(responsive_html2, height=500, scrolling=False)
     
         # Add restart button at the end
     col1, col2, col3 = st.columns([1, 1, 1])
