@@ -82,7 +82,8 @@ Raising the question of what we have opens the door to deeper questions of socia
     data1 = Data()
     data1.add_df(df, units={"gdp_pct_str": "%"})
     
-    chart1 = Chart(display=DisplayTarget.MANUAL)
+    # Create chart with responsive settings
+    chart1 = Chart(width="100%", height="400px", display=DisplayTarget.MANUAL)
     chart1.animate(data1)
 
     # Show total GDP
@@ -139,21 +140,8 @@ Raising the question of what we have opens the door to deeper questions of socia
     
     # Render first chart
     html_content1 = chart1._repr_html_()
-    # Fix both div and canvas dimensions for responsive design
-    responsive_html1 = html_content1.replace(
-        'width: 800px; height: 480px;',
-        'width: 100%; height: 400px; max-width: 100%;'
-    ).replace(
-        'width="1200" height="720"',
-        'width="800" height="400"'
-    ).replace(
-        'style="width: 100%; height: 100%;"',
-        'style="width: 100%; height: 400px;"'
-    )
-    # Use column layout to control container width explicitly
-    col1, col2, col3 = st.columns([0.1, 0.8, 0.1])
-    with col2:
-        st.components.v1.html(responsive_html1, height=500, scrolling=False)
+    # Use simple responsive container without fixed width
+    st.components.v1.html(html_content1, height=450, scrolling=False)
 
     # Add restart button at the end
     col1, col2, col3 = st.columns([1, 1, 1])
@@ -170,7 +158,8 @@ Raising the question of what we have opens the door to deeper questions of socia
     data2 = Data()
     data2.add_df(df, units={"gdp_pct_str": "%"})
     
-    chart2 = Chart(display=DisplayTarget.MANUAL)
+    # Create chart with responsive settings
+    chart2 = Chart(width="100%", height="400px", display=DisplayTarget.MANUAL)
     chart2.animate(data2)
 
     for i,y in enumerate(range(2005, 2026,5)):  # Changed to 2026 to include 2025
@@ -208,21 +197,8 @@ Raising the question of what we have opens the door to deeper questions of socia
 
     # Render second chart
     html_content2 = chart2._repr_html_()
-    # Fix both div and canvas dimensions for responsive design
-    responsive_html2 = html_content2.replace(
-        'width: 800px; height: 480px;',
-        'width: 100%; height: 400px; max-width: 100%;'
-    ).replace(
-        'width="1200" height="720"',
-        'width="800" height="400"'
-    ).replace(
-        'style="width: 100%; height: 100%;"',
-        'style="width: 100%; height: 400px;"'
-    )
-    # Use column layout to control container width explicitly
-    col1, col2, col3 = st.columns([0.1, 0.8, 0.1])
-    with col2:
-        st.components.v1.html(responsive_html2, height=500, scrolling=False)
+    # Use simple responsive container without fixed width
+    st.components.v1.html(html_content2, height=450, scrolling=False)
     
         # Add restart button at the end
     col1, col2, col3 = st.columns([1, 1, 1])
