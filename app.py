@@ -124,7 +124,7 @@ Raising the question of what we have opens the door to deeper questions of socia
     
     # Render first chart
     html_content1 = chart1._repr_html_()
-    st.components.v1.html(html_content1, height=450, scrolling=False)
+    st.components.v1.html(html_content1, width=700, height=450, scrolling=False)
 
     # Add restart button at the end
     col1, col2, col3 = st.columns([1, 1, 1])
@@ -180,7 +180,7 @@ Raising the question of what we have opens the door to deeper questions of socia
 
     # Render second chart
     html_content2 = chart2._repr_html_()
-    st.components.v1.html(html_content2, height=450, scrolling=False)
+    st.components.v1.html(html_content2, width=700, height=450, scrolling=False)
     
         # Add restart button at the end
     col1, col2, col3 = st.columns([1, 1, 1])
