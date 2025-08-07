@@ -139,13 +139,16 @@ Raising the question of what we have opens the door to deeper questions of socia
     
     # Render first chart
     html_content1 = chart1._repr_html_()
-    # Fix canvas dimensions for responsive design
+    # Fix both div and canvas dimensions for responsive design
     responsive_html1 = html_content1.replace(
+        'width: 800px; height: 480px;',
+        'width: 100%; height: 400px; max-width: 100%;'
+    ).replace(
         'width="1200" height="720"',
         'width="800" height="400"'
     ).replace(
-        'width: 100%; height: 100%;',
-        'width: 100%; height: 400px; max-width: 100%;'
+        'style="width: 100%; height: 100%;"',
+        'style="width: 100%; height: 400px;"'
     )
     # Use column layout to control container width explicitly
     col1, col2, col3 = st.columns([0.1, 0.8, 0.1])
@@ -205,13 +208,16 @@ Raising the question of what we have opens the door to deeper questions of socia
 
     # Render second chart
     html_content2 = chart2._repr_html_()
-    # Fix canvas dimensions for responsive design
+    # Fix both div and canvas dimensions for responsive design
     responsive_html2 = html_content2.replace(
+        'width: 800px; height: 480px;',
+        'width: 100%; height: 400px; max-width: 100%;'
+    ).replace(
         'width="1200" height="720"',
         'width="800" height="400"'
     ).replace(
-        'width: 100%; height: 100%;',
-        'width: 100%; height: 400px; max-width: 100%;'
+        'style="width: 100%; height: 100%;"',
+        'style="width: 100%; height: 400px;"'
     )
     # Use column layout to control container width explicitly
     col1, col2, col3 = st.columns([0.1, 0.8, 0.1])
