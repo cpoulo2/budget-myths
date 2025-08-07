@@ -51,16 +51,17 @@ A **scarcity myth** limits how the public imagines government budgets and how st
 
 For example, media, policy makers, or government officials often cite “rising expenditures” or “cost pressures” without answering an essential question: in relation to what?
 
-Illinois' economy generates over a trillion dollars a year. It's the 6th largest state economy in the US and the economic powerhouse of the midwest (over $200 million larger than the next largest economy), but public debates almost never contextualize spending within this broader social capacity.
-Raising the question of what we have opens the door to deeper questions of social justice: who owns that value, and who gets to decide how it's used?
+Illinois' economy generates over a trillion dollars a year. It's the 6th largest state economy in the US and the economic powerhouse of the Midwest (over $200 million larger than the next largest economy), but public debates almost never contextualize spending within this broader social capacity.
 
+Raising the question of what we have opens the door to deeper questions of social justice: who owns that value, and who gets to decide how it's used?
 """, unsafe_allow_html=True)
 
     st.subheader("""The Private Sector Captures Most of Illinois' Economic Growth""")
     st.markdown("""
-    One way to understand Illinois' economic capacity is to look at gross domestic product (GDP). GDP measures the total value of all goods and services produced in Illinois and it allows us to compare across sectors of the economy.
+One way to understand what we have is through a measure called the gross domestic product (GDP). GDP measures the total value of all goods and services produced in Illinois and it allows us to compare across sectors of the economy.
 
-    The chart below shows that Illinois' economy generated $1.2 trillion 2025. The private sector captured about 91% of that.
+The chart below shows that Illinois' economy generated $1.2 trillion 2025. The private sector captured about 91% of that.
+
     """, unsafe_allow_html=True)
 
     # First chart section
@@ -133,7 +134,7 @@ Raising the question of what we have opens the door to deeper questions of socia
         if st.button("🔄 Restart Animation", key="restart_btn_1", type="primary"):
             st.rerun()
 
-    st.subheader("""State and Local Governmental Expenditures are Making up a Decreasing Share of GDP""")
+    st.subheader("""State and local government are getting a decreasing share of GDP.""")
     st.markdown("""
     TEXT
     """, unsafe_allow_html=True)
