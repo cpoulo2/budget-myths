@@ -68,7 +68,6 @@ Raising the question of what we have opens the door to deeper questions of socia
     
     # Progressive loading for first chart
     with chart1_placeholder.container():
-        st.info("📊 Loading economic analysis...")
         time.sleep(1)  # Simulate loading
         
         # First chart section
