@@ -4,6 +4,7 @@ from ipyvizzu import Chart, Data, Config, Style, DisplayTarget
 from streamlit.components.v1 import html
 import ssl
 import os
+import time
 
 # Load data
 @st.cache_data
@@ -45,22 +46,6 @@ def main():
     
     st.set_page_config(page_title="≠ growth", layout="centered")
 
-    # Add CSS to make charts truly responsive
-    st.markdown("""
-    <style>
-    /* Make iframe container responsive */
-    .stElementContainer {
-        width: 100% !important;
-    }
-    
-    /* Target the iframe directly */
-    iframe {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
     st.title("Illinois' economic capacity and who captures it?")
     st.markdown("""
 A scarcity myth limits how the public imagines government budgets and how state and local leaders address deficits. This myth—the taken-for-granted belief that we simply don’t have enough to fund public jobs, goods, and services—obscures the true shape of our economy. It operates by omitting the full picture of what our society actually produces and who owns it.
@@ -78,70 +63,77 @@ Raising the question of what we have opens the door to deeper questions of socia
     The chart below shows that Illinois' economy generated $1.2 trillion 2025. The private sector captured about 91% of that.
     """, unsafe_allow_html=True)
 
-    # First chart section
-    data1 = Data()
-    data1.add_df(df, units={"gdp_pct_str": "%"})
+    # Create placeholder for first chart
+    chart1_placeholder = st.empty()
     
-    # Create chart with responsive settings
-    chart1 = Chart(width="100%", height="400px", display=DisplayTarget.MANUAL)
-    chart1.animate(data1)
+    # Progressive loading for first chart
+    with chart1_placeholder.container():
+        st.info("📊 Loading economic analysis...")
+        time.sleep(1)  # Simulate loading
+        
+        # First chart section
+        data1 = Data()
+        data1.add_df(df, units={"gdp_pct_str": "%"})
+        
+        # Create chart with responsive settings
+        chart1 = Chart(width="100%", height="400px", display=DisplayTarget.MANUAL)
+        chart1.animate(data1)
 
-    # Show total GDP
-    chart1.animate(
-        Data.filter("record['year'] == 2025 && record['quarter'] == 'Q1'"),
-        Config({
-            "y": "gdp",
-            "label": "gdp_label_total",
-            "title": "GDP (2025 Q1)",
-            "legend": None
-        }),
-        Style({
-            "plot": {
-                "yAxis": {"label": {"numberScale": "K, M, B, T"}}            
-            }
-        }),
-        delay=1,
-    )
+        # Show total GDP
+        chart1.animate(
+            Data.filter("record['year'] == 2025 && record['quarter'] == 'Q1'"),
+            Config({
+                "y": "gdp",
+                "label": "gdp_label_total",
+                "title": "GDP (2025 Q1)",
+                "legend": None
+            }),
+            Style({
+                "plot": {
+                    "yAxis": {"label": {"numberScale": "K, M, B, T"}}            
+                }
+            }),
+            delay=1,
+        )
 
-    chart1.animate(
-        Data.filter("record['type'] != 'Federal' && record['year'] == 2025 && record['quarter'] == 'Q1'"),
-        Config({
-            "y": ["gdp","type"],
-            "label": "combined_label",
-            "color":"type",
-            "title": "Illinois' GDP (March 2025)",
-            "legend": None
-        }),
-        Style({
-            "plot": {
-                "yAxis": {"label": {"numberScale": "K, M, B, T"}}
-            }
-        }),
-        delay=1,
-    )
+        chart1.animate(
+            Data.filter("record['type'] != 'Federal' && record['year'] == 2025 && record['quarter'] == 'Q1'"),
+            Config({
+                "y": ["gdp","type"],
+                "label": "combined_label",
+                "color":"type",
+                "title": "Illinois' GDP (March 2025)",
+                "legend": None
+            }),
+            Style({
+                "plot": {
+                    "yAxis": {"label": {"numberScale": "K, M, B, T"}}
+                }
+            }),
+            delay=1,
+        )
 
-    chart1.animate(
-        Data.filter("record['type'] != 'Federal' && record['year'] == 2025 && record['quarter'] == 'Q1'"),
-        Config({
-            "y": "gdp",
-            "x":"type",
-            "label": "combined_label",
-            "legend": None,
-            "color":"type",
-            "title": "Private vs State and Local Share of GDP (March 2025)",
-        }),
-        Style({
-            "plot": {
-                "yAxis": {"label": {"numberScale": "K, M, B, T"}}
-            }
-        }),
-        delay=2,
-    )
-    
-    # Render first chart
-    html_content1 = chart1._repr_html_()
-    # Use simple responsive container without fixed width
-    st.components.v1.html(html_content1, height=450, scrolling=False)
+        chart1.animate(
+            Data.filter("record['type'] != 'Federal' && record['year'] == 2025 && record['quarter'] == 'Q1'"),
+            Config({
+                "y": "gdp",
+                "x":"type",
+                "label": "combined_label",
+                "legend": None,
+                "color":"type",
+                "title": "Private vs State and Local Share of GDP (March 2025)",
+            }),
+            Style({
+                "plot": {
+                    "yAxis": {"label": {"numberScale": "K, M, B, T"}}
+                }
+            }),
+            delay=2,
+        )
+        
+        # Render first chart
+        html_content1 = chart1._repr_html_()
+        st.components.v1.html(html_content1, height=450, scrolling=False)
 
     # Add restart button at the end
     col1, col2, col3 = st.columns([1, 1, 1])
@@ -154,51 +146,58 @@ Raising the question of what we have opens the door to deeper questions of socia
     TEXT
     """, unsafe_allow_html=True)
 
-    # Second chart section
-    data2 = Data()
-    data2.add_df(df, units={"gdp_pct_str": "%"})
+    # Create placeholder for second chart
+    chart2_placeholder = st.empty()
     
-    # Create chart with responsive settings
-    chart2 = Chart(width="100%", height="400px", display=DisplayTarget.MANUAL)
-    chart2.animate(data2)
+    # Progressive loading for second chart
+    with chart2_placeholder.container():
+        st.info("📈 Loading historical trends...")
+        time.sleep(1.5)  # Slightly longer delay for second chart
+        
+        # Second chart section
+        data2 = Data()
+        data2.add_df(df, units={"gdp_pct_str": "%"})
+        
+        # Create chart with responsive settings
+        chart2 = Chart(width="100%", height="400px", display=DisplayTarget.MANUAL)
+        chart2.animate(data2)
 
-    for i,y in enumerate(range(2005, 2026,5)):  # Changed to 2026 to include 2025
-       chart2.animate(
-           Data.filter(f"(record['year'] >= 2005 && record['year'] <= {y}) && record['type'] != 'Federal' && record['quarter'] == 'Q1'"),
-           Config({
-               "x": ["year_type","type"],  # This creates side-by-side bars grouped by year and type
-               "y": "gdp",
-               "color": "type",
-               "label": "gdp_label",
-               "title": f"Private vs State and Local Share of GDP (2005-{y})",
-               "legend": None
-           }),
-           x={"easing": "linear", "delay": 0},
-           y={"delay": 0},
-           show={"delay": 0},
-           hide={"delay": 0},
-           title={"duration": 0, "delay": 0},
-           duration=1,
-           delay=0.3,  # Faster animation for smoother progression
-       )
+        for i,y in enumerate(range(2005, 2026,5)):  # Changed to 2026 to include 2025
+           chart2.animate(
+               Data.filter(f"(record['year'] >= 2005 && record['year'] <= {y}) && record['type'] != 'Federal' && record['quarter'] == 'Q1'"),
+               Config({
+                   "x": ["year_type","type"],  # This creates side-by-side bars grouped by year and type
+                   "y": "gdp",
+                   "color": "type",
+                   "label": "gdp_label",
+                   "title": f"Private vs State and Local Share of GDP (2005-{y})",
+                   "legend": None
+               }),
+               x={"easing": "linear", "delay": 0},
+               y={"delay": 0},
+               show={"delay": 0},
+               hide={"delay": 0},
+               title={"duration": 0, "delay": 0},
+               duration=1,
+               delay=0.3,  # Faster animation for smoother progression
+           )
 
-    chart2.animate(
-           Data.filter(f"(record['year'] == 2005 || record['year'] == 2025) && record['type'] != 'Federal' && record['quarter'] == 'Q1'"),
-           Config({
-               "x": ["year_type", "type"],  # This creates side-by-side bars grouped by year and type
-               "y": "gdp_pct",
-               "color": "type",
-               "label": "combined_label",
-               "title": f"Private vs State and Local Share of GDP (2005 and 2025)",
-               "legend": None
-           }),
-           delay=.1,  # Faster animation for smoother progression
-       )
+        chart2.animate(
+               Data.filter(f"(record['year'] == 2005 || record['year'] == 2025) && record['type'] != 'Federal' && record['quarter'] == 'Q1'"),
+               Config({
+                   "x": ["year_type", "type"],  # This creates side-by-side bars grouped by year and type
+                   "y": "gdp_pct",
+                   "color": "type",
+                   "label": "combined_label",
+                   "title": f"Private vs State and Local Share of GDP (2005 and 2025)",
+                   "legend": None
+               }),
+               delay=.1,  # Faster animation for smoother progression
+           )
 
-    # Render second chart
-    html_content2 = chart2._repr_html_()
-    # Use simple responsive container without fixed width
-    st.components.v1.html(html_content2, height=450, scrolling=False)
+        # Render second chart
+        html_content2 = chart2._repr_html_()
+        st.components.v1.html(html_content2, height=450, scrolling=False)
     
         # Add restart button at the end
     col1, col2, col3 = st.columns([1, 1, 1])
