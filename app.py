@@ -43,7 +43,7 @@ def main():
 
     # Main app
     
-    st.set_page_config(page_title="≠ growth", layout="wide")
+    st.set_page_config(page_title="≠ growth", layout="centered")
 
     # Add responsive CSS
     st.markdown("""
