@@ -45,16 +45,6 @@ def main():
     
     st.set_page_config(page_title="≠ growth", layout="centered")
 
-    # Add minimal CSS - just ensure no overflow
-    st.markdown("""
-    <style>
-    /* Prevent any horizontal overflow */
-    .stApp {
-        overflow-x: hidden;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
     st.title("Illinois' economic capacity and who captures it?")
     st.markdown("""
 A scarcity myth limits how the public imagines government budgets and how state and local leaders address deficits. This myth—the taken-for-granted belief that we simply don’t have enough to fund public jobs, goods, and services—obscures the true shape of our economy. It operates by omitting the full picture of what our society actually produces and who owns it.
@@ -136,7 +126,7 @@ Raising the question of what we have opens the door to deeper questions of socia
     # Use column layout to control container width explicitly
     col1, col2, col3 = st.columns([0.1, 0.8, 0.1])
     with col2:
-        st.components.v1.html(html_content1, height=500, scrolling=False)
+        st.components.v1.html(html_content1, height=100%,width=100% scrolling=False)
 
     # Add restart button at the end
     col1, col2, col3 = st.columns([1, 1, 1])
