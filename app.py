@@ -126,7 +126,7 @@ Raising the question of what we have opens the door to deeper questions of socia
     # Use column layout to control container width explicitly
     col1, col2, col3 = st.columns([0.1, 0.8, 0.1])
     with col2:
-        st.components.v1.html(html_content1, height=100%,width=100% scrolling=False)
+        st.components.v1.html(html_content1, height=100%,width=100%, scrolling=False)
 
     # Add restart button at the end
     col1, col2, col3 = st.columns([1, 1, 1])
