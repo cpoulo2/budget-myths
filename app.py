@@ -45,10 +45,11 @@ def main():
     
     st.set_page_config(page_title="≠ growth", layout="centered")
 
-    st.title("Illinois' economic capacity and who captures it?")
+    st.title("What's Illinois' economic capacity and who captures it?")
     st.markdown("""
-A scarcity myth limits how the public imagines government budgets and how state and local leaders address deficits. This myth—the taken-for-granted belief that we simply don’t have enough to fund public jobs, goods, and services—obscures the true shape of our economy. It operates by omitting the full picture of what our society actually produces and who owns it.
-When statistics and statements about “rising expenditures” or “cost pressures” are invoked, for instance, they’re rarely followed with the answer to the pivotal question: in relation to what?
+A **scarcity myth** limits how the public imagines government budgets and how state and local leaders address deficits. This myth—**the taken-for-granted belief that we simply don’t have enough to fund public jobs, goods, and services—operates by omitting the full picture of what our society produces and who owns it.**
+
+For example, media, policy makers, or government officials often cite “rising expenditures” or “cost pressures” without answering an essential question: in relation to what?
 
 Illinois' economy generates over a trillion dollars a year. It's the 6th largest state economy in the US and the economic powerhouse of the midwest (over $200 million larger than the next largest economy), but public debates almost never contextualize spending within this broader social capacity.
 Raising the question of what we have opens the door to deeper questions of social justice: who owns that value, and who gets to decide how it's used?
