@@ -289,7 +289,7 @@ We can break this down to understand which industries are capturing this value. 
 
         A 1 percent different when dealing with a trillion dollar economy amounts to a large sum of money. Had the 2005 share of GDP held, **state and local governments' would have had over \\$12 billion more to spend in March of 2025.** That's enough to cover Trump's cuts to medicaid and the transit cliff while still having over $2 billion to spend.
 
-        This hypothetical points to an important consideration: the resources to fund public jobs and programs exist, its a matter how these resources are distributed or more importantly **how  they are taxed**. We will cover the topic of taxation in the following section. 
+        This hypothetical points to an important consideration: the resources to fund public jobs and programs exist, its a matter how these resources are distributed or more importantly **how  that value is taxed and used by the public sector**. In the absence of tax revenue, budget cuts and borrowing from those with money *appears* to be the only feasible solution to our budget deficits. We will cover the topic of taxation in the following section. 
 
         """, unsafe_allow_html=True)
 
@@ -367,6 +367,7 @@ We can break this down to understand which industries are capturing this value. 
         st.subheader("""Take Aways""")
         st.markdown("""
 
+        - Scaricty is a myth used to justify cuts to the public sector or borrowing from those with money, which divert more tax dollars to interest and other forms of finance capital.
         - There are enough economic resources to pay for and expand public sector jobs and programs.
         - The private sector captures 91% of Illinois' economic resources. These resources have been increasingly privately owned over the past two decades while the state and local governments are losing their share.
         - Had the 2005 share of GDP held, state and local governments' would have had over \\$12 billion more to spend in March of 2025.
