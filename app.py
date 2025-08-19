@@ -418,7 +418,7 @@ Land and homes however are not the only form of wealth. More importantly, landed
             ("Blair Hull", 1000000000),
         ]
 
-        st.markdown(f"### With a {tax_rate:.0%} tax rate on billionaires' wealth:")
+        st.markdown(f"### With a {tax_rate:.2%} tax rate on billionaires' wealth:")
 
         total_wealth = sum(wealth for name, wealth in billionaires)
         total_revenue = tax_rate * total_wealth
