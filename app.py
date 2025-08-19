@@ -411,7 +411,6 @@ Land and homes however are not the only form of wealth. More importantly, landed
             ("Don Levin", 1700000000),
             ("Matthew Pritzker", 1700000000),
             ("Bryan Glazer", 1700000000),
-            ("Hartley Rogers", 1500000000),
             ("Brad Keywell", 1400000000),
             ("Michael Krasny", 1300000000),
             ("Blair Hull", 1000000000),
