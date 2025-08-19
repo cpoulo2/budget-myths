@@ -205,7 +205,7 @@ We can break this down to understand which industries are capturing this value. 
 
         st.subheader("""Illinois' economy is growing, but the state and local government share is shrinking""")
         st.markdown("""
-        Illinois' economy has been growing over the last 20 years. Large increases occurred post-Great Recession and again during and after the COVID pandic. 
+        Illinois' economy doubled in size over the past 20 years. Large increases occurred post-Great Recession and again during and after the COVID pandic. 
 
         The scarcity myth often implies that public sector expenditures are 'out of control'. However, the data suggests that this is not the case. **State and local governmental expenditures have accounted for a decreasing share of GDP over the last two decades.** 
         """, unsafe_allow_html=True)
@@ -367,7 +367,7 @@ We can break this down to understand which industries are capturing this value. 
         st.subheader("""Take Aways""")
         st.markdown("""
 
-        - Scaricty is a myth used to justify cuts to the public sector or borrowing from those with money, which divert more tax dollars to interest and other forms of finance capital.
+        - Scaricty is a myth used to justify cuts to the public sector or borrowing from the private sector to resolve budget deficits, which divert more tax dollars to interest and other forms of finance capital.
         - There are enough economic resources to pay for and expand public sector jobs and programs.
         - The private sector captures 91% of Illinois' economic resources. These resources have been increasingly privately owned over the past two decades while the state and local governments are losing their share.
         - Had the 2005 share of GDP held, state and local governments' would have had over \\$12 billion more to spend in March of 2025.
