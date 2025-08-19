@@ -94,7 +94,7 @@ Raising the question of what we have opens the door to questions of social justi
 
 """, unsafe_allow_html=True)
 
-        st.subheader("""The Private Sector Captures $9 Out of Every $10 of Illinois' Economic Output""")
+        st.subheader("""The Private Sector Captures \\$9 Out of Every \\$10 of Illinois' Economic Output""")
         st.markdown("""
 One way to understand our resources (what we have) is by using a statistic called the <b><mark style='background-color: yellow'>gross domestic product</mark></b> (GDP). <b><mark style='background-color: yellow'>It measures the total value of all goods and services produced in any given boundary</mark></b>—in this case the state of Illinois.
 
