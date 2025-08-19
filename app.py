@@ -27,7 +27,7 @@ def main():
     if df is None:
         return
 
-    tab1, tab2, tab3, tab4 = st.tabs(["Scarcity Myth", "Tax Burden Myth","Resources","Glossary"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Scarcity Myth", "Tax Burden Myth","Tax the Rich Calculator","Resources","Glossary"])
 
     with tab1:
 
@@ -108,15 +108,14 @@ We can break this down to understand which industries are capturing this value. 
         st.markdown(
     """
     <style>
-    div.stButton > button {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+    div.stButton {
+        display: flex;
+        justify-content: center;
     }
     </style>
     """,
     unsafe_allow_html=True
-        )
+)
 
             # Add restart button at the end
         st.button("Show animation", key="restart_btn_1", type="primary")
