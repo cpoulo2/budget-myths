@@ -440,11 +440,11 @@ Land and homes however are not the only form of wealth. More importantly, landed
 
 
     with tab4:
-    st.header("Resources")
+        st.header("Resources")
         st.write("IN PROGRESS")
 
     with tab5:
-    st.header("Glossary")
+        st.header("Glossary")
         st.write("IN PROGRESS")
 
 if __name__ == "__main__":
