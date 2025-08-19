@@ -108,9 +108,11 @@ We can break this down to understand which industries are capturing this value. 
         st.markdown(
     """
     <style>
-    div.stButton.st-emotion-cache-8atqhb {
+    div[data-testid="stElementContainer"] {
+        width: 100% !important;
         display: flex !important;
         justify-content: center !important;
+        align-items: center !important;
     }
     </style>
     """,
