@@ -74,7 +74,7 @@ def main():
                 else "", axis=1)
         # Main app
 
-        st.title("Illinois' economic resources and who captures them")
+        st.title("Illinois' Economic Resources and Who Captures Them")
         st.markdown("""In this section we will:
 
 - Introduce the scarcity myth;
