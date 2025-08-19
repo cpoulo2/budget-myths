@@ -377,7 +377,7 @@ Land and homes however are not the only form of wealth. More importantly, landed
 
         """,unsafe_allow_html=True)
 
-        st.subheader("Apply a wealth tax on billionaires to see how much revenue Illinois could generate.")
+        st.subheader("Apply a wealth tax on Illinois' billionaires to see how much revenue Illinois could generate.")
 
         tax_rate = st.slider("Adjust the rate from 0 to the wealth tax on the average Chicagoan", 0.000, 6.995, 1.000) / 100  # Convert to decimal
 
