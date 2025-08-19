@@ -27,7 +27,7 @@ def main():
     if df is None:
         return
 
-    tab0,tab1, tab2, tab3, tab4, tab5 = st.tabs(["Budget Myths","Scarcity Myth", "Tax Burden Myth","Tax the Rich Calculator","Resources","Glossary"])
+    tab1, tab2, tab3, tab4, tab5 = st.tabs(["Scarcity Myth", "Tax Burden Myth","Tax the Rich Calculator","Resources","Glossary"])
 
     with tab1:
 
