@@ -379,7 +379,7 @@ Land and homes however are not the only form of wealth. More importantly, landed
 
         st.subheader("Adjust the wealth tax rate on billionaires")
 
-        tax_rate = st.slider("Adjust the rate from 0 to the wealth tax on the average Chicagoan", 0.0, 6.995, 1.0) / 100  # Convert to decimal
+        tax_rate = st.slider("Adjust the rate from 0 to the wealth tax on the average Chicagoan", 0.000, 6.995, 1.000) / 100  # Convert to decimal
 
         billionaires = [
             ("Lukas Walton", 40500000000),
