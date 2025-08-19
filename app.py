@@ -104,20 +104,6 @@ We can break this down to understand which industries are capturing this value. 
 
         """, unsafe_allow_html=True)
 
-        # centering all buttons
-        st.markdown(
-    """
-    <style>
-    div[data-testid="stElementContainer"] {
-        width: 100% !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-        )
 
             # Add restart button at the end
         st.button("Show animation", key="restart_btn_1", type="primary")
