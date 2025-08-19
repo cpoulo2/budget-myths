@@ -328,7 +328,7 @@ We can break this down to understand which industries are capturing this value. 
                    "x": ["year_type", "type"],  # This creates side-by-side bars grouped by year and type
                    "y": "gdp",
                    "color": "type",
-                   "label": ["gdp_label",'type'],
+                   "label": "gdp_label",
                    "title": f"State and Local GDP (2025)",
                    "subtitle": f"Actual vs 2005 Share",
                    "legend": None
@@ -369,7 +369,7 @@ We can break this down to understand which industries are capturing this value. 
         st.header("Tax the Rich Calculator")
         st.markdown("""The property tax is one of the most detested taxes and the poster child of the anti-tax movement. But it's worth considering why and what the property tax is. 
         
-The property tax is a wealth tax, but a very <b><mark style='background-color: yellow'>narrow-based</mark></b> wealth tax. That means <b><mark style='background-color: yellow'>it applies only to a very *narrow* subsection of a larger potential tax base</mark></b>—in this case, one type of nonfinancial asset, land and the built structure ontop of it (re: your home), versus a broader base of financial and non-financial assets. 
+The property tax is a wealth tax, but a very <b><mark style='background-color: yellow'>narrow-based</mark></b> wealth tax. That means <b><mark style='background-color: yellow'>it applies only to a very *narrow* subsection of a larger potential tax base</mark></b>—in this case, one type of nonfinancial asset, land and the built structure ontop of it (i.e. your home), versus a broader base of financial and non-financial assets. 
         
 Land and homes however are not the only form of wealth. More importantly, landed wealth make up a much smaller share of millionaires' and billionaires' net wealth comapred to the rest of us. 10% of their net wealth comes from real-estate; whereas, real-estate make up about 50% of net wealth of the bottom 50%. Conversely, Most (almost 2/3s) of the net wealth of millionaires' and billionaires' comes from corporate equities, mutual fund shares, and other financial assets. The property tax as it exists in Illinois is therefore regressive as it targets assets disproportionately held by those who are less wealthy.
 
@@ -422,9 +422,19 @@ Land and homes however are not the only form of wealth. More importantly, landed
         total_revenue = tax_rate * total_wealth
         st.markdown(f"<b><mark style='background-color: yellow'>The State of Illinois would generate ${total_revenue:,.0f} in revenue.</mark></b>",unsafe_allow_html=True)
 
+
         for name, wealth in billionaires:
             revenue = tax_rate * wealth
             st.markdown(f"- **{name}** would generate **${revenue:,.0f}** in revenue.")
+
+        st.subheader("""Take Aways""")
+        st.markdown("""
+
+- The property tax in Illinois is a narrow based wealth tax meaning it only taxes land and the built structures on it (i.e. your home), which is a small subsection of wealth .
+- The property tax's narrowness makes it regressive, because it exclusively taxes wealth that is disproportionately owned by the bottom 50%.
+- If we taxed billionaires' wealth like we tax the average Chicagoan, Illinois could generate **$11.5 billion dollars!**
+
+        """, unsafe_allow_html=True)
 
 
     with tab4:
