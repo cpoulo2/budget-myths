@@ -366,10 +366,73 @@ We can break this down to understand which industries are capturing this value. 
         st.write("IN PROGRESS")
 
     with tab3:
+        st.header("Tax the Rich Calculator")
+        st.markdown("""The property tax is one of the most detested taxes and the poster child of the anti-tax movement. But it's worth considering why and what the property tax is. 
+        
+The property tax is a wealth tax, but a very <b><mark style='background-color: yellow'>narrow-based</mark></b> wealth tax meaning that <b><mark style='background-color: yellow'>it applies exlusively to a very 'narrow' subsection of a larger potential tax base--in this case, one type of nonfinancial asset, land and the built structure ontop of it (re: your home), versus a broader based of financial and non-financial assets. 
+        
+Land and homes however are not the only form of wealth. More importantly, landed wealth make up a much smaller share of millionaires' and billionaires' net wealth comapred to the rest of us. 10% of their net wealth comes from real-estate; whereas, real-estate make up about 50% of net wealth of the bottom 50%. Conversely, Most (almost 2/3s) of the net wealth of millionaires' and billionaires' comes from corporate equities, mutual fund shares, and other financial assets. The property tax as it exists in Illinois is therefore regressive as it targets assets disproportionately held by those who are less wealthy.
+
+**What if we taxed millionaires and billionaires like the bottom 50%?**
+
+        """,unsafe_allow_html=True)
+
+        st.subheader("Adjust the wealth tax rate on billionaires")
+
+        tax_rate = st.slider("Adjust the rate from 0 to the wealth tax on the average Chicagoan", 0.0, 6.995, 1.0) / 100  # Convert to decimal
+
+        billionaires = [
+            ("Lukas Walton", 40500000000),
+            ("Patrick Ryan", 13200000000),
+            ("Neil Bluhm", 7400000000),
+            ("Joe Mansueto", 6600000000),
+            ("Thomas Pritzker", 6400000000),
+            ("Mark Walter", 6100000000),
+            ("Ty Warner", 6000000000),
+            ("Elizabeth Uihlein", 5600000000),
+            ("Richard Uihlein", 5600000000),
+            ("Steve Lavin", 5400000000),
+            ("Eric Lefkofsky", 5200000000),
+            ("Sam Zell*", 5100000000),
+            ("Justin Ishbia", 4300000000),
+            ("Penny Pritzker", 4000000000),
+            ("Joseph Grendys", 4000000000),
+            ("Byron Trott", 3700000000),
+            ("J.B. Pritzker", 3700000000),
+            ("Josephine Louis*", 3200000000),
+            ("Oprah Winfrey", 3100000000),
+            ("Matthew Roszak", 2500000000),
+            ("Michael Polsky", 2500000000),
+            ("Jennifer Pritzker", 2500000000),
+            ("Steven Sarowitz", 2400000000),
+            ("Antonio Gracias", 2300000000),
+            ("Jerry Reinsdorf", 2300000000),
+            ("John Kapoor", 1800000000),
+            ("Don Levin", 1700000000),
+            ("Matthew Pritzker", 1700000000),
+            ("Bryan Glazer", 1700000000),
+            ("Hartley Rogers", 1500000000),
+            ("Brad Keywell", 1400000000),
+            ("Michael Krasny", 1300000000),
+            ("Blair Hull", 1000000000),
+        ]
+
+        st.markdown(f"### With a {tax_rate:.0%} tax rate on billionaires' wealth:")
+
+        total_wealth = sum(wealth for name, wealth in billionaires)
+        total_revenue = tax_rate * total_wealth
+        st.markdown(f"<b><mark style='background-color: yellow'>The State of Illinois would generate ${total_revenue:,.0f} in revenue.</mark></b>",unsafe_allow_html=True)
+
+        for name, wealth in billionaires:
+            revenue = tax_rate * wealth
+            st.markdown(f"- **{name}** would generate **${revenue:,.0f}** in revenue.")
+
+
+    with tab4:
         st.header("Resources")
         st.write("IN PROGRESS")
 
-    with tab4:
+    with tab5:
         st.header("Glossary")
         st.write("IN PROGRESS")
 
