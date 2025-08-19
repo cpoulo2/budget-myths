@@ -274,7 +274,7 @@ We can break this down to understand which industries are capturing this value. 
         st.subheader("""If the 2005 share of the GDP held, the state and local governments would have $12.2B more to spend.""")
         st.markdown("""
 
-        A 1 percent different when dealing with a trillion dollar economy amounts to a large sum of money. Had the 2005 share of GDP held, **state and local governments' would have had over \\$12 billion more to spend in March of 2025.** That's enough to cover Trump's cuts to medicaid and the transit cliff while still having over $2 billion to spend.
+        A 1 percent different when dealing with a trillion dollar economy amounts to a large sum of money. Had the 2005 share of GDP held, **the state and local governments' would have had over \\$12 billion more to spend in March of 2025.** That's enough to cover Trump's cuts to medicaid and the transit cliff while still having over $2 billion to spend.
 
         This hypothetical points to an important consideration: the resources to fund public jobs and programs exist, its a matter how these resources are distributed or more importantly **how  that value is taxed and used by the public sector**. In the absence of tax revenue, budget cuts and borrowing from those with money *appears* to be the only feasible solution to our budget deficits. We will cover the topic of taxation in the following section. 
 
@@ -367,7 +367,8 @@ We can break this down to understand which industries are capturing this value. 
 
     with tab3:
         st.header("Tax the Rich Calculator")
-        st.markdown("""The property tax is one of the most detested taxes and the poster child of the anti-tax movement. But it's worth considering why and what the property tax is. 
+        st.markdown("""
+The property tax is one of the most hated taxes and it's the poster child of the anti-tax movement. But it's worth considering why and what the property tax is. 
         
 The property tax is a wealth tax, but a very <b><mark style='background-color: yellow'>narrow-based</mark></b> wealth tax. That means <b><mark style='background-color: yellow'>it applies only to a very *narrow* subsection of a larger potential tax base</mark></b>—in this case, one type of nonfinancial asset, land and the built structure ontop of it (i.e. your home), versus a broader base of financial and non-financial assets. 
         
