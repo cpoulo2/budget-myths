@@ -27,7 +27,7 @@ def main():
     if df is None:
         return
 
-    tab1, tab2, tab3 = st.tabs(["Scarcity Myth", "Tax Burden Myth","Glossary"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Scarcity Myth", "Tax Burden Myth","Resources","Glossary"])
 
     with tab1:
 
@@ -373,6 +373,18 @@ We can break this down to understand which industries are capturing this value. 
         - Had the 2005 share of GDP held, state and local governments' would have had over \\$12 billion more to spend in March of 2025.
 
         """, unsafe_allow_html=True)
+
+    with tab2:
+        st.header("The Tax Burden Myth")
+        st.write("IN PROGRESS")
+
+    with tab3:
+        st.header("Resources")
+        st.write("IN PROGRESS")
+
+    with tab4:
+        st.header("Glossary")
+        st.write("IN PROGRESS")
 
 if __name__ == "__main__":
     main()
