@@ -27,7 +27,7 @@ def main():
     if df is None:
         return
 
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(["Scarcity Myth", "Tax Burden Myth","Tax the Rich Calculator","Resources","Glossary"])
+    tab0,tab1, tab2, tab3, tab4, tab5 = st.tabs(["Budget Myths","Scarcity Myth", "Tax Burden Myth","Tax the Rich Calculator","Resources","Glossary"])
 
     with tab1:
 
@@ -82,7 +82,7 @@ def main():
 - Explore the distribution of economic resources in Illinois; and
 - Understand the implications of the scarcity myth""", unsafe_allow_html=True)
 
-    st.subheader("""The Scarcity Myth""")
+        st.subheader("""The Scarcity Myth""")
         st.markdown("""
 A <b><mark style='background-color: yellow'>scarcity myth</mark></b> limits how the public imagines government budgets and how state and local leaders address deficits. <b><mark style='background-color: yellow'>This refers to the taken-for-granted belief that we simply don’t have the resources to fund public jobs, goods, and services. It operates by omitting the full picture of what our society produces and who owns it.</mark></b>
 
@@ -94,7 +94,7 @@ Raising the question of what we have opens the door to questions of social justi
 
 """, unsafe_allow_html=True)
 
-    st.subheader("""The Private Sector Captures $9 Out of Every $10 of Illinois' Economic Output""")
+        st.subheader("""The Private Sector Captures $9 Out of Every $10 of Illinois' Economic Output""")
         st.markdown("""
 One way to understand our resources (what we have) is by using a statistic called the <b><mark style='background-color: yellow'>gross domestic product</mark></b> (GDP). <b><mark style='background-color: yellow'>It measures the total value of all goods and services produced in any given boundary</mark></b>—in this case the state of Illinois.
 
@@ -190,7 +190,7 @@ We can break this down to understand which industries are capturing this value. 
         html_content1 = chart1._repr_html_()
         st.components.v1.html(html_content1, width=700, height=450, scrolling=False)
 
-    st.subheader("""Illinois' Economy Is Growing, but the State and Local Government Share Is Shrinking""")
+        st.subheader("""Illinois' Economy Is Growing, but the State and Local Government Share Is Shrinking""")
         st.markdown("""
         Illinois' economy doubled in size over the past 20 years. Large increases occurred post-Great Recession and again during and after the COVID pandic. 
 
@@ -271,7 +271,7 @@ We can break this down to understand which industries are capturing this value. 
 
         # Show what would happen if state and local share stayed at 2005 levels
 
-    st.subheader("""If the 2005 Share of the GDP Held, the State and Local Governments Would Have $12.2B More to Spend.""")
+        st.subheader("""If the 2005 Share of the GDP Held, the State and Local Governments Would Have $12.2B More to Spend.""")
         st.markdown("""
 
         A 1 percent different when dealing with a trillion dollar economy amounts to a large sum of money. Had the 2005 share of GDP held, **the state and local governments' would have had over \\$12 billion more to spend in March of 2025.** That's enough to cover Trump's cuts to medicaid and the transit cliff while still having over $2 billion to spend.
@@ -351,7 +351,7 @@ We can break this down to understand which industries are capturing this value. 
         html_content3 = chart3._repr_html_()
         st.components.v1.html(html_content3, width=700, height=450, scrolling=False)
 
-    st.subheader("""Takeaways""")
+        st.subheader("""Takeaways""")
         st.markdown("""
 
         - Scaricty is a myth used to justify cuts to the public sector or borrowing from the private sector to resolve budget deficits, which divert more tax dollars to interest and other forms of finance capital.
@@ -362,11 +362,11 @@ We can break this down to understand which industries are capturing this value. 
         """, unsafe_allow_html=True)
 
     with tab2:
-    st.header("The Tax Burden Myth")
+        st.header("The Tax Burden Myth")
         st.write("IN PROGRESS")
 
     with tab3:
-    st.header("What If We Taxed Billionaire Wealth Like We Tax Working Class Wealth?")
+        st.header("What If We Taxed Billionaire Wealth Like We Tax Working Class Wealth?")
 
         st.markdown("""
 The property tax is one of the most hated taxes and it's the poster child of the anti-tax movement. But it's worth considering why and what the property tax is. 
@@ -379,7 +379,7 @@ Land and homes however are not the only form of wealth. More importantly, landed
 
         """,unsafe_allow_html=True)
 
-    st.subheader("Apply a Wealth Tax on Illinois' Billionaires to See How Much Revenue Illinois Could Generate.")
+        st.subheader("Apply a Wealth Tax on Illinois' Billionaires to See How Much Revenue Illinois Could Generate.")
 
         tax_rate = st.slider("Adjust the rate from 0 to the wealth tax on the average Chicagoan", 0.000, 6.995, 1.000) / 100  # Convert to decimal
 
@@ -429,7 +429,7 @@ Land and homes however are not the only form of wealth. More importantly, landed
             revenue = tax_rate * wealth
             st.markdown(f"- **{name}** would generate **${revenue:,.0f}** in revenue.")
 
-    st.subheader("""Takeaways""")
+        st.subheader("""Takeaways""")
         st.markdown("""
 
 - The property tax in Illinois is a narrow based wealth tax meaning it only taxes land and the built structures on it (i.e. your home), which is a small subsection of wealth .
