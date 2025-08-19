@@ -108,14 +108,14 @@ We can break this down to understand which industries are capturing this value. 
         st.markdown(
     """
     <style>
-    div.stButton {
-        display: flex;
-        justify-content: center;
+    div.stButton.st-emotion-cache-8atqhb {
+        display: flex !important;
+        justify-content: center !important;
     }
     </style>
     """,
     unsafe_allow_html=True
-)
+        )
 
             # Add restart button at the end
         st.button("Show animation", key="restart_btn_1", type="primary")
