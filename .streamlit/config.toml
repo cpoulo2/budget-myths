@@ -2,4 +2,5 @@
 base="light"
 backgroundColor="ghostWhite"
 primaryColor="#e57373"
+secondaryBackgroundColor="#E3E4FA"
 borderColor="mediumSlateBlue"

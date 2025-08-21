@@ -84,7 +84,7 @@ def main():
 
         st.subheader("""The Scarcity Myth""")
         st.markdown("""
-A <b><mark style='background-color: yellow'>scarcity myth</mark></b> limits how the public imagines government budgets and how state and local leaders address deficits. <b><mark style='background-color: yellow'>This refers to the taken-for-granted belief that we simply don’t have the resources to fund public jobs, goods, and services. It operates by omitting the full picture of what our society produces and who owns it.</mark></b>
+A <b><mark style='background-color: yellow'>scarcity myth</mark></b> limits how the public imagines government budgets and how state and local leaders address deficits. This refers to <b><mark style='background-color: yellow'>the taken-for-granted belief that we simply don’t have the resources to fund public jobs, goods, and services. It operates by omitting the full picture of what our society produces and who owns it.</mark></b>
 
 For example, when budgets are discussed publicly the media, policy makers, and government officials often cite “rising expenditures” or “cost pressures” without answering an essential question: in relation to what?
 
@@ -246,7 +246,7 @@ We can break this down to understand which industries are capturing this value. 
                    "x": ["year_type", "type"],  # This creates side-by-side bars grouped by year and type
                    "y": "gdp_pct_100",
                    "color": "type",
-                   "label": ["gdp_pct_str","type"],
+                   "label": "gdp_pct_str",
                    "title": f"Illinois' GDP (2005 and 2025)",
                    "subtitle": f"State and Local Governmental Share",
                    "legend": None
@@ -362,8 +362,33 @@ We can break this down to understand which industries are capturing this value. 
         """, unsafe_allow_html=True)
 
     with tab2:
-        st.header("The Tax Burden Myth")
-        st.write("IN PROGRESS")
+        st.header("Illinois' Budget Deficit and the Revenue Problem")
+        st.markdown("""In this section we will:
+- Introduce the tax burden myth;
+- Discuss regressive taxation;
+- Illustrate how Illinois undertaxes it's economy using government data;
+- Explore how this relates to income and wealth inequality; and 
+- Discuss the effects of anti-tax austerity.
+""",unsafe_allow_html=True)
+        st.subheader("The Tax Burden Myth")
+
+        st.markdown("""
+The <b><mark style='background-color: yellow'>tax burden myth</mark></b> refers to <b><mark style='background-color: yellow'>the belief that the State of Illinois overtaxes. It operates by hiding income and wealth inequalites and who is actually taxed.</mark></b>
+
+For most of us, this might sound contrary to our lived experience--our homes our taxed, our groceries and clothes are taxed, and we are often stuck with fines and fees. But the key question is: how are we overtaxed if, as we showed in the scarcity myth, the state and local governments are capturing a shrinking share of economic growth? 
+
+The answer is regressive taxation. Illinois...
+
+
+""", unsafe_allow_html=True)
+
+    col1,col2 = st.columns([3,1])
+    with col1:
+        st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis tortor ac nulla blandit mattis ut id arcu. Nullam eget eros vel tellus convallis commodo at sit amet elit. Proin ornare accumsan velit. Maecenas odio felis, pharetra et arcu sed, tincidunt maximus velit. Aliquam dignissim ut elit id cursus. Fusce semper ligula ex, a sodales enim porta ut. Aliquam nunc eros, porttitor in massa eu, scelerisque blandit turpis. Nam consequat fringilla lectus a tincidunt. Nunc id tortor vitae ex molestie tristique eu sit amet ipsum. Mauris finibus tempus arcu vel suscipit.")
+    with col2:
+        container = st.container()
+        container.subheader("Brief history lesson")
+        container.write("The anti-tax movement started with a scribble on a cocktail napkin. Blah blah blah")
 
     with tab3:
         st.header("What If We Taxed Billionaire Wealth Like We Tax Working Class Wealth?")
