@@ -382,18 +382,18 @@ The answer is regressive taxation. Illinois...
 
 """, unsafe_allow_html=True)
 
-    col1,col2 = st.columns([3,1])
-    with col1:
-        st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis tortor ac nulla blandit mattis ut id arcu. Nullam eget eros vel tellus convallis commodo at sit amet elit. Proin ornare accumsan velit. Maecenas odio felis, pharetra et arcu sed, tincidunt maximus velit. Aliquam dignissim ut elit id cursus. Fusce semper ligula ex, a sodales enim porta ut. Aliquam nunc eros, porttitor in massa eu, scelerisque blandit turpis. Nam consequat fringilla lectus a tincidunt. Nunc id tortor vitae ex molestie tristique eu sit amet ipsum. Mauris finibus tempus arcu vel suscipit.")
-    with col2:
-        container = st.container()
-        container.subheader("Brief history lesson")
-        container.write("The anti-tax movement started with a scribble on a cocktail napkin. Blah blah blah")
-
-    with tab3:
-        st.header("What If We Taxed Billionaire Wealth Like We Tax Working Class Wealth?")
-
-        st.markdown("""
+        col1,col2 = st.columns([3,1])
+        with col1:
+            st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis tortor ac nulla blandit mattis ut id arcu. Nullam eget eros vel tellus convallis commodo at sit amet elit. Proin ornare accumsan velit. Maecenas odio felis, pharetra et arcu sed, tincidunt maximus velit. Aliquam dignissim ut elit id cursus. Fusce semper ligula ex, a sodales enim porta ut. Aliquam nunc eros, porttitor in massa eu, scelerisque blandit turpis. Nam consequat fringilla lectus a tincidunt. Nunc id tortor vitae ex molestie tristique eu sit amet ipsum. Mauris finibus tempus arcu vel suscipit.")
+        with col2:
+            container = st.container()
+            container.subheader("Brief history lesson")
+            container.write("The anti-tax movement started with a scribble on a cocktail napkin. Blah blah blah")
+    
+        with tab3:
+            st.header("What If We Taxed Billionaire Wealth Like We Tax Working Class Wealth?")
+    
+            st.markdown("""
 The property tax is one of the most hated taxes. For this reason, it's used as the poster child for the anti-tax movement. But it's worth considering why this is the case and what the property tax is. 
         
 The property tax is a wealth tax, but a very <b><mark style='background-color: yellow'>narrow-based</mark></b> wealth tax. That means <b><mark style='background-color: yellow'>it applies only to a very *narrow* subsection of a larger potential tax base</mark></b>—in this case, one type of nonfinancial asset, land and the built structure ontop of it (i.e. your home), versus a broader base of financial and non-financial assets. 
