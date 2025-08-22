@@ -4,6 +4,7 @@ from ipyvizzu import Chart, Data, Config, Style, DisplayTarget
 from streamlit.components.v1 import html
 import ssl
 import os
+from streamlit_extras.stylable_container import stylable_container
 
 st.set_page_config(page_title="≠ growth", layout="centered")
 
@@ -373,11 +374,11 @@ We can break this down to understand which industries are capturing this value. 
         st.subheader("The Tax Burden Myth")
 
         st.markdown("""
-The <b><mark style='background-color: yellow'>tax burden myth</mark></b> refers to <b><mark style='background-color: yellow'>the belief that the State of Illinois overtaxes. It operates by hiding income and wealth inequalites and who is actually taxed.</mark></b>
+The <b><mark style='background-color: yellow'>tax burden myth</mark></b> refers to <b><mark style='background-color: yellow'>the belief that the State of Illinois over taxes its residents and businesses. It operates by hiding growing income and wealth inequality and **who** and **what** our state actually taxes.</mark></b>
 
-For most of us, this might sound contrary to our lived experience--our homes our taxed, our groceries and clothes are taxed, and we are often stuck with fines and fees. But the key question is: how are we overtaxed if, as we showed in the scarcity myth, the state and local governments are capturing a shrinking share of economic growth? 
+For most of us, this might sound contrary to our lived experience--our homes are taxed, our groceries and clothes are taxed, we get stuck with a variety of fines and fees, and so on. The question is: how are we over taxed if, as we showed in the scarcity myth, state and local government is capturing a shrinking share of economic growth? 
 
-The answer is regressive taxation. Illinois...
+Illinois' anti-tax culture, article 7, unwillingness to tax income, services. show services % of PCE.
 
 
 """, unsafe_allow_html=True)
@@ -386,9 +387,23 @@ The answer is regressive taxation. Illinois...
         with col1:
             st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis tortor ac nulla blandit mattis ut id arcu. Nullam eget eros vel tellus convallis commodo at sit amet elit. Proin ornare accumsan velit. Maecenas odio felis, pharetra et arcu sed, tincidunt maximus velit. Aliquam dignissim ut elit id cursus. Fusce semper ligula ex, a sodales enim porta ut. Aliquam nunc eros, porttitor in massa eu, scelerisque blandit turpis. Nam consequat fringilla lectus a tincidunt. Nunc id tortor vitae ex molestie tristique eu sit amet ipsum. Mauris finibus tempus arcu vel suscipit.")
         with col2:
-            container = st.container()
-            container.subheader("Brief history lesson")
-            container.write("The anti-tax movement started with a scribble on a cocktail napkin. Blah blah blah")
+            with stylable_container(
+                key="history_lesson",
+                css_styles="""
+                {
+                background-color: #CCCCFF;
+                border-radius: 10px;
+                padding: 10px;
+                align-items: left;
+                text-align: left;
+                }
+                .history-title {
+                text-align:center
+                }
+
+                """):
+                st.markdown("""<p class="history-title"><b>Brief history lesson</b></p>""",unsafe_allow_html=True)
+                st.write("The anti-tax movement started with a scribble on a cocktail napkin. Blah blah blah")
 
     with tab3:
         st.header("What If We Taxed Billionaire Wealth Like We Tax Working Class Wealth?")
