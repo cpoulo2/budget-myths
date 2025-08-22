@@ -389,11 +389,11 @@ The answer is regressive taxation. Illinois...
             container = st.container()
             container.subheader("Brief history lesson")
             container.write("The anti-tax movement started with a scribble on a cocktail napkin. Blah blah blah")
-    
-        with tab3:
-            st.header("What If We Taxed Billionaire Wealth Like We Tax Working Class Wealth?")
-    
-            st.markdown("""
+
+    with tab3:
+        st.header("What If We Taxed Billionaire Wealth Like We Tax Working Class Wealth?")
+
+        st.markdown("""
 The property tax is one of the most hated taxes. For this reason, it's used as the poster child for the anti-tax movement. But it's worth considering why this is the case and what the property tax is. 
         
 The property tax is a wealth tax, but a very <b><mark style='background-color: yellow'>narrow-based</mark></b> wealth tax. That means <b><mark style='background-color: yellow'>it applies only to a very *narrow* subsection of a larger potential tax base</mark></b>—in this case, one type of nonfinancial asset, land and the built structure ontop of it (i.e. your home), versus a broader base of financial and non-financial assets. 
