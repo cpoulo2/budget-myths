@@ -376,16 +376,17 @@ We can break this down to understand which industries are capturing this value. 
         st.markdown("""
 The <b><mark style='background-color: yellow'>tax burden myth</mark></b> refers to <b><mark style='background-color: yellow'>the belief that the State of Illinois over taxes its residents and businesses. It operates by hiding growing income and wealth inequality and **who** and **what** our state actually taxes.</mark></b>
 
-For most of us, this might sound contrary to our lived experience--our homes are taxed, our groceries and clothes are taxed, we get stuck with a variety of fines and fees, and so on. The question is: how are we over taxed if, as we showed in the scarcity myth, state and local government is capturing a shrinking share of economic growth? 
+For most of us, this myth might sound contrary to our lived experience--our homes are taxed, our groceries and clothes are taxed, we get stuck with a variety of fines and fees, and so on. The question is: how are we overtaxed if, as we showed in the scarcity myth, state and local government is capturing a shrinking share of economic growth? 
 
-Illinois' anti-tax culture, article 7, unwillingness to tax income, services. show services % of PCE.
+When it comes to budgets and taxes, the “taxpayer” and the collective “we” are often invoked. Yet “we” aren’t all in the same class and “we” are not all taxed the same.
 
+Illinois has a <b><mark style='background-color: yellow'>regressive tax system</mark></b> which means that <b><mark style='background-color: yellow'>tax obligation increases as income decreases</mark></b>. Put simply, working people take on a larger share of taxes than rich people and corporations. This is due to both the **structure** of taxes and the **what** is taxed.
 
 """, unsafe_allow_html=True)
 
-        col1,col2 = st.columns([3,1])
+        col1,col2 = st.columns([5,2])
         with col1:
-            st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis tortor ac nulla blandit mattis ut id arcu. Nullam eget eros vel tellus convallis commodo at sit amet elit. Proin ornare accumsan velit. Maecenas odio felis, pharetra et arcu sed, tincidunt maximus velit. Aliquam dignissim ut elit id cursus. Fusce semper ligula ex, a sodales enim porta ut. Aliquam nunc eros, porttitor in massa eu, scelerisque blandit turpis. Nam consequat fringilla lectus a tincidunt. Nunc id tortor vitae ex molestie tristique eu sit amet ipsum. Mauris finibus tempus arcu vel suscipit.")
+            st.write("For example, in 1970 the State of Illinois' new constitution established a flat income tax, meaning that Illinois could not tax income on a graduated basis (where those with more pay more).")
         with col2:
             with stylable_container(
                 key="history_lesson",
@@ -402,8 +403,8 @@ Illinois' anti-tax culture, article 7, unwillingness to tax income, services. sh
                 }
 
                 """):
-                st.markdown("""<p class="history-title"><b>Brief history lesson</b></p>""",unsafe_allow_html=True)
-                st.write("The anti-tax movement started with a scribble on a cocktail napkin. Blah blah blah")
+                st.markdown("""<p class="history-title"><b>Brief History Lession</b></p>""",unsafe_allow_html=True)
+                st.markdown("""Some of the most important anti-tax measures in Illinois preceeded the famous Reagan era anti-tax movement. Illinois' 1970 Constitution institued a flat income tax and prevented City's from taxing income or the growing service economy.""",unsafe_allow_html=True)
 
     with tab3:
         st.header("What If We Taxed Billionaire Wealth Like We Tax Working Class Wealth?")
