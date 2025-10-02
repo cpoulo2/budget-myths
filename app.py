@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 from ipyvizzu import Chart, Data, Config, Style, DisplayTarget
+from ipyvizzustory import Story, Slide, Step
 from streamlit.components.v1 import html
 import ssl
 import os
@@ -28,7 +29,7 @@ def main():
     if df is None:
         return
 
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(["Scarcity Myth", "Tax Burden Myth","Tax the Rich Calculator","Resources","Glossary"])
+    tab1, tab2, tab3, tab4, tab5,tab6 = st.tabs(["Scarcity Myth", "Tax Burden Myth","Tax the Rich Calculator","Resources","Glossary", "EBF underfunding"])
 
     with tab1:
 
@@ -506,6 +507,96 @@ Land and homes however are not the only form of wealth. More importantly, landed
     with tab5:
         st.header("Glossary")
         st.write("IN PROGRESS")
+
+    with tab6:
+        # Read in data
+
+        data = pd.read_csv("data_ebf.csv")
+
+        # Melt data so that Gap, Needed funding, and Actual funding are in one column
+        data_melted = data.melt(id_vars=["Year"], value_vars=["Gap", "Needed", "Actual"], var_name="Type", value_name="Amount")
+
+        # Make year_type column
+
+        data_melted['year_type'] = data_melted['Year'].astype(str)
+
+        st.subheader("Evidence-Based Funding Underfunding")
+
+        data4 = Data()
+        data4.add_df(data_melted)
+        chart4 = Chart(width="100%", height="400px", display=DisplayTarget.MANUAL)
+        chart4.animate(data4)
+
+#        st.write(data4)
+
+        st.button("Replay Animation", key="restart_btn_4", type="primary")
+
+
+        for i,y in enumerate(range(2018, 2027,1)):
+           chart4.animate(
+               Data.filter(f"(record['Year'] >= 2018 && record['Year'] <= {y}) && record['Type'] != 'Actual'"),
+               Config({
+                   "x": ["year_type","Type"],  # This creates side-by-side bars grouped by year and type
+                   "y": "Amount",
+                   "color": "Type",
+#                   "label": "Amount",
+                   "title": f"EBF Funding (2018-{y})",
+#                   "legend": None
+               }),
+               Style({
+                "backgroundColor": "#ffffff00",
+                "plot": {
+                    "yAxis": {
+                        "color": "#CCCCCCFF",
+                        "label": {"numberScale": "K, M, B, T"},
+                        "title": {"color": "#ffffff00"},
+                        "interlacing": {"color": "#E6E6FA"}
+                    }
+                }
+                }),
+               x={"easing": "linear", "delay": 0},
+               y={"delay": 0},
+               show={"delay": 0},
+               hide={"delay": 0},
+               title={"duration": 0, "delay": 0},
+               duration=1,
+               delay=.3,  # Faster animation for smoother progression
+           )
+        chart4.animate(
+            Data.filter(f"(record['Year'] >= 2018 && record['Year'] <= 2026) && record['Type'] != 'Gap'"),
+            Config({
+                "x": ["year_type","Type"],  # This creates side-by-side bars grouped by year and type
+                "y": "Amount",
+                "color": "Type",
+#                   "label": "Amount",
+                "title": f"EBF Funding (2018-{y})",
+#                   "legend": None
+            }),
+            Style({
+            "backgroundColor": "#ffffff00",
+            "plot": {
+                "yAxis": {
+                    "color": "#CCCCCCFF",
+                    "label": {"numberScale": "K, M, B, T"},
+                    "title": {"color": "#ffffff00"},
+                    "interlacing": {"color": "#E6E6FA"}
+                }
+            }
+            }),
+            x={"easing": "linear", "delay": 0},
+            y={"delay": 0},
+            show={"delay": 0},
+            hide={"delay": 0},
+            title={"duration": 0, "delay": 0},
+            duration=1,
+            delay=2,
+        )
+
+            # Render second chart
+        html_content4 = chart4._repr_html_()
+        st.components.v1.html(html_content4, width=700, height=450, scrolling=False)
+
+
 
 if __name__ == "__main__":
     main()
