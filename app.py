@@ -520,6 +520,8 @@ Land and homes however are not the only form of wealth. More importantly, landed
 
         data_melted['year_type'] = data_melted['Year'].astype(str)
 
+        # Make a string amount type in millions and billions
+        data_melted['Amount_str'] = data_melted['Amount'].apply(lambda x: f"${x/1000000000:.1f} B" if x >= 1000000000 else f"${x/1000000:.1f} M")
         st.subheader("Evidence-Based Funding Underfunding")
 
         data4 = Data()
@@ -539,7 +541,7 @@ Land and homes however are not the only form of wealth. More importantly, landed
                    "x": ["year_type","Type"],  # This creates side-by-side bars grouped by year and type
                    "y": "Amount",
                    "color": "Type",
-#                   "label": "Amount",
+                   "label": "Amount_str",
                    "title": f"EBF Funding (2018-{y})",
 #                   "legend": None
                }),
